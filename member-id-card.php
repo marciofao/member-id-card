@@ -18,6 +18,9 @@ define('MIC_SCRIPT_VER', '1.2.44');
 define('MIC_PLUGIN_DIR', dirname(__FILE__).'');
 define('MIC_PLUGIN_URI', plugin_dir_url(__FILE__).'');
 
+//VENDORS INIT
+require_once('vendor/simple-local-avatars/simple-local-avatars.php');
+
 
 //TRANSLATIONS SETUP
 function ni_set_user_locale(){
@@ -66,8 +69,15 @@ function mic_show_card(){
     }
 }
 
-
 add_action('init', 'mic_show_card');
+
+function mic_qr_generate(){
+    if(isset($_GET['qr-generate'])){
+        require_once('card-generate.php');
+        die();
+    }
+}
+add_action('init', 'mic_qr_generate');
 
 //debug function
 function dump_die($a){
