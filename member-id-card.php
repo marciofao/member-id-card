@@ -1,16 +1,30 @@
 <?php
 
+
+
+
+
 /**
  * @wordpress-plugin
  * Plugin Name: Member ID Card
- * Plugin URI: http://opah.com.br
- * Description: Adds a ID card link to user info page
+ * Plugin URI: http://marciofao.github.io
+ * Description: Adds an ID card link to the user profile
  * Version: 1.0
  * Text Domain: mic
  * Author: Márcio Lopes Fão
  * Author URI: https://marciofao.github.io/
-
  */
+
+register_activation_hook( __FILE__, 'child_plugin_activate' );
+function child_plugin_activate(){
+
+    // Require parent plugin
+    if ( ! is_plugin_active( 'simple-local-avatars/simple-local-avatars.php' ) and current_user_can( 'activate_plugins' ) ) {
+        // Stop activation redirect and show error
+        wp_die(_('Desculpe, este plugin requer o plugin Simple Local Avatars instalado e ativo. <br><a href="' . admin_url( 'plugins.php' ) . '">&laquo; Voltar aos plugins</a>'));
+    }
+}
+
 
 define('MIC_SCRIPT_VER', '1.2.44');
 //define('SCRIPT_VER', rand(0,1000)); //for CSS Dev mode
@@ -18,18 +32,17 @@ define('MIC_SCRIPT_VER', '1.2.44');
 define('MIC_PLUGIN_DIR', dirname(__FILE__).'');
 define('MIC_PLUGIN_URI', plugin_dir_url(__FILE__).'');
 
-//VENDORS INIT
-require_once('vendor/simple-local-avatars/simple-local-avatars.php');
 
 
-//TRANSLATIONS SETUP
-function ni_set_user_locale(){
+
+//TRANSLATIONS SETUP - set user language
+function mic_set_user_locale(){
   
     switch_to_locale(get_user_locale());
 
-    load_plugin_textdomain( 'nilab', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
+    load_plugin_textdomain( 'mic', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
 }
-add_filter('init', 'ni_set_user_locale', 1);
+add_filter('init', 'mic_set_user_locale', 1);
 
 
 function mic_profile_fields()
