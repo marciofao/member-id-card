@@ -59,8 +59,8 @@ function mic_profile_fields()
             <th scope="row"><?php echo __('Carteirinha ', 'mic').$site_name ?> </th>
             <td>
                 <label for="mic-link">
-                    <a href="../?mic-id-card-view=<?php echo $current_user->ID ?>" target="_blank">
-                        <?php _e('Ver carteirinha', 'mic') ?>
+                    <a href="<?php echo get_home_url() ?>?card-view=<?php echo $current_user->ID ?>" target="_blank">
+                        <?php _e('Ver/imprimir carteirinha', 'mic') ?>
                     </a>
                 </label>
             </td>
@@ -76,7 +76,7 @@ add_action('show_user_profile', 'mic_profile_fields',25);
 add_action('edit_user_profile', 'mic_profile_fields',25);
 
 function mic_show_card(){
-    if(isset($_GET['mic-id-card-view'])){
+    if(isset($_GET['card-view'])){
         require_once('card-page.php');
         die();
     }
@@ -85,7 +85,7 @@ function mic_show_card(){
 add_action('init', 'mic_show_card');
 
 function mic_qr_generate(){
-    if(isset($_GET['qr-generate'])){
+    if(isset($_GET['card-generate'])){
         require_once('card-generate.php');
         die();
     }
