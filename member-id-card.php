@@ -31,6 +31,7 @@ define('MIC_SCRIPT_VER', '1.2.44');
 
 define('MIC_PLUGIN_DIR', dirname(__FILE__).'');
 define('MIC_PLUGIN_URI', plugin_dir_url(__FILE__).'');
+define('ERR_MSG', __("<h1>Dados inválidos!</h1>", 'mic'));
 
 
 
@@ -77,6 +78,7 @@ add_action('edit_user_profile', 'mic_profile_fields',25);
 
 function mic_show_card(){
     if(isset($_GET['card-view'])){
+        if(!$_GET['card-view']) die(ERR_MSG);
         require_once('card-page.php');
         die();
     }
@@ -86,6 +88,7 @@ add_action('init', 'mic_show_card');
 
 function mic_qr_generate(){
     if(isset($_GET['card-generate'])){
+        if(!$_GET['card-generate']) die(ERR_MSG);
         require_once('card-generate.php');
         die();
     }
