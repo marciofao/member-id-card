@@ -7,9 +7,9 @@
 /**
  * @wordpress-plugin
  * Plugin Name: Member ID Card
- * Plugin URI: http://marciofao.github.io
+ * Plugin URI: https://github.com/marciofao/member-id-card
  * Description: Adds an ID card link to the user profile
- * Version: 1.0
+ * Version: 0.1
  * Text Domain: mic
  * Author: Márcio Lopes Fão
  * Author URI: https://marciofao.github.io/
@@ -19,9 +19,14 @@ register_activation_hook( __FILE__, 'child_plugin_activate' );
 function child_plugin_activate(){
 
     // Require parent plugin
-    if ( ! is_plugin_active( 'simple-local-avatars/simple-local-avatars.php' ) and current_user_can( 'activate_plugins' ) ) {
+    if ( !is_plugin_active( 'simple-local-avatars/simple-local-avatars.php' ) and current_user_can( 'activate_plugins' ) ) {
         // Stop activation redirect and show error
-        wp_die(_('Desculpe, este plugin requer o plugin Simple Local Avatars instalado e ativo. <br><a href="' . admin_url( 'plugins.php' ) . '">&laquo; Voltar aos plugins</a>'));
+        wp_die(
+            printf(
+                __('Desculpe, este plugin requer o plugin Simple Local Avatars instalado e ativo. <br><a href="%s">&laquo; Voltar aos plugins</a>', 'mic'),
+                admin_url( 'plugins.php' )
+            )
+        );
     }
 }
 
