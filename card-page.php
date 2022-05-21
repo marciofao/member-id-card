@@ -42,6 +42,7 @@ $usr = get_user_by('id', $_GET['card-view']);
             position: relative;
             margin-bottom: 2em;
             padding: 1em;
+            box-sizing: border-box;
         }
 
         .qrcode {
