@@ -1,9 +1,5 @@
 <?php
 
-
-
-
-
 /**
  * @wordpress-plugin
  * Plugin Name: Member ID Card
@@ -65,7 +61,15 @@ function mic_profile_fields()
             <th scope="row"><?php echo __('Member ID Card ', 'mic').$site_name ?> </th>
             <td>
                 <label for="mic-link">
-                    <a href="<?php echo get_home_url() ?>?card-view=<?php echo base64_encode($current_user->ID) ?>" target="_blank">
+                    <?php 
+
+                    // If admin or logged user will show user id
+                    $user_id = $current_user->ID;
+                    if(isset($_GET["user_id"]))
+                    $user_id = $_GET["user_id"];
+                    
+                    ?>
+                    <a href="<?php echo get_home_url() ?>?card-view=<?php echo base64_encode($user_id) ?>" target="_blank">
                         <?php _e('See/Print Member ID Card', 'mic') ?>
                     </a>
                 </label>
