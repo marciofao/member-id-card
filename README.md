@@ -1,5 +1,5 @@
 # member-id-card
-Simple wordpress plugin for user's id card creation and display <br>
+Simple Wordpress plugin for user's id card creation and display <br>
 
 <b>Features:</b><br>
 <ul>
