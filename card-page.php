@@ -46,11 +46,13 @@ $usr = get_user_by('id', $_GET['card-view']);
         }
 
         .qrcode {
-            width: 10em;
+            width: 8em;
         }
-
-        .user-pic {
+        .picture{
             width: 30%;
+        }
+        .user-pic {
+            width: 100%;
         }
 
         .tac {
