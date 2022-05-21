@@ -48,7 +48,7 @@ $usr = get_user_by('id', $_GET['card-view']);
             position: relative;
         }
 
-        .W100 {
+        .w100 {
             width: 100%;
         }
 
@@ -95,7 +95,7 @@ $usr = get_user_by('id', $_GET['card-view']);
         updateQRCode('<?php echo get_home_url() . "/?card-view=" . $_GET['card-view'] ?>');
     </script>
 
-    <div class="user-activity tac ">
+    <div class="user-activity tac w100">
         <div class="activity w100"><?php _e("Active User", "mic") ?></div>
     </div>
 
