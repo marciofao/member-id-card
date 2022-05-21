@@ -91,14 +91,7 @@ function mic_show_card(){
 
 add_action('init', 'mic_show_card');
 
-function mic_qr_generate(){
-    if(isset($_GET['card-generate'])){
-        if(!$_GET['card-generate']) die(ERR_MSG);
-        require_once('card-generate.php');
-        die;
-    }
-}
-add_action('init', 'mic_qr_generate');
+
 
 //debug function
 function dump_die($a){
