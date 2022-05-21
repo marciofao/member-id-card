@@ -65,7 +65,7 @@ function mic_profile_fields()
             <th scope="row"><?php echo __('Member ID Card ', 'mic').$site_name ?> </th>
             <td>
                 <label for="mic-link">
-                    <a href="<?php echo get_home_url() ?>?card-view=<?php echo $current_user->ID ?>" target="_blank">
+                    <a href="<?php echo get_home_url() ?>?card-view=<?php echo base64_encode($current_user->ID) ?>" target="_blank">
                         <?php _e('See/Print Member ID Card', 'mic') ?>
                     </a>
                 </label>

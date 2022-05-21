@@ -1,5 +1,5 @@
 <?php
-$usr = get_user_by('id', $_GET['card-view']);
+$usr = get_user_by('id', base64_decode($_GET['card-view']));
 ?>
 
 <!DOCTYPE html>
