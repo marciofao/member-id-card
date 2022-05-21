@@ -16,9 +16,19 @@ $usr = get_user_by('id', $_GET['card-view']);
     <script type="text/javascript" src="<?php echo MIC_PLUGIN_URI ?>/vendor/html5qrcode/html5-qrcode.js">
     </script>
     <style>
+        /* It envisions a A4 printing logic */
         html {
             font-size: 1vw;
             font-family: Arial, Helvetica, sans-serif;
+        }
+
+        @media only screen and (max-width: 600px) {
+            html {
+                font-size: 2vw;
+            }
+            body{
+                margin: 0;
+            }
         }
 
         h1 {
@@ -38,7 +48,9 @@ $usr = get_user_by('id', $_GET['card-view']);
             width: 10em;
         }
 
-        .picture {}
+        .user-pic {
+            width: 30%;
+        }
 
         .tac {
             text-align: center;
@@ -75,6 +87,10 @@ $usr = get_user_by('id', $_GET['card-view']);
         ?>
         <div class="user-info">
             <h2><span class="display-name"><?php echo $usr->display_name ?> </span></h2>
+            <div class="picture">
+                <?php $profile_pic = get_usermeta($usr->ID, 'simple_local_avatar') ?>
+                <img src="<?php echo $profile_pic['full'] ?>" alt="<?php _e('Profile Picture', 'mic') ?>" class="user-pic">
+            </div>
         </div>
 
 
