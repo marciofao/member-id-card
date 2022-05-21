@@ -95,7 +95,7 @@ function mic_qr_generate(){
     if(isset($_GET['card-generate'])){
         if(!$_GET['card-generate']) die(ERR_MSG);
         require_once('card-generate.php');
-        die();
+        die;
     }
 }
 add_action('init', 'mic_qr_generate');
@@ -105,4 +105,4 @@ function dump_die($a){
     echo '<pre>';
     var_dump($a);
     die;
-}   
+}

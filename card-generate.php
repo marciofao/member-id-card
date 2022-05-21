@@ -1,7 +1,8 @@
-<?php 
+<?php
+error_reporting(E_ALL);
+$string = get_home_url()."/?card-view=".$_GET['card-generate'];
+//die($string);
+require('vendor/phpqrcode/qrlib.php');
 
+QRcode::png('edrftgyhujx');
 
-require_once('vendor/phpqrcode/qrlib.php');
- // outputs image directly into browser, as PNG stream
-
- QRcode::png(get_home_url()."/?card-view=".$_GET['card-generate']);
