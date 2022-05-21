@@ -69,50 +69,52 @@ $usr = get_user_by('id', $_GET['card-view']);
 
 <body>
 
-<div class="card card-front">
-    <?php
-    do_action('mic_card_page_html_before_front');
-    ?>
-    <h2><span class="display-name"><?php echo $usr->display_name ?> </span></h2>
+    <div class="card card-front">
+        <?php
+        do_action('mic_card_page_html_before_front');
+        ?>
+        <div class="user-info">
+            <h2><span class="display-name"><?php echo $usr->display_name ?> </span></h2>
+        </div>
 
 
-    <!-- This is where our QRCode will appear in. -->
-    <div id="qrcode"></div>
+        <!-- This is where our QRCode will appear in. -->
+        <div id="qrcode"></div>
 
-    <script type="text/javascript">
-        function updateQRCode(text) {
+        <script type="text/javascript">
+            function updateQRCode(text) {
 
-            var element = document.getElementById("qrcode");
+                var element = document.getElementById("qrcode");
 
-            var bodyElement = document.body;
-            if (element.lastChild)
-                element.replaceChild(showQRCode(text), element.lastChild);
-            else
-                element.appendChild(showQRCode(text));
+                var bodyElement = document.body;
+                if (element.lastChild)
+                    element.replaceChild(showQRCode(text), element.lastChild);
+                else
+                    element.appendChild(showQRCode(text));
 
-        }
+            }
 
-        updateQRCode('<?php echo get_home_url() . "/?card-view=" . $_GET['card-view'] ?>');
-    </script>
+            updateQRCode('<?php echo get_home_url() . "/?card-view=" . $_GET['card-view'] ?>');
+        </script>
 
-    <div class="user-activity tac w100">
-        <div class="activity w100"><?php _e("Active User", "mic") ?></div>
+        <div class="user-activity tac w100">
+            <div class="activity w100"><?php _e("Active User", "mic") ?></div>
+        </div>
+
+        <?php
+        do_action('mic_card_page_html_after_front');
+        ?>
     </div>
+    <div class="card card-back">
+        <?php
+        do_action('mic_card_page_html_before_back');
+        ?>
 
-    <?php
-    do_action('mic_card_page_html_after_front');
-    ?>
-</div>
-<div class="card card-back">
-    <?php
-    do_action('mic_card_page_html_before_back');
-    ?>
+        <?php
+        do_action('mic_card_page_html_after_back');
+        ?>
 
-    <?php
-    do_action('mic_card_page_html_after_back');
-    ?>
-
-</div>
+    </div>
 </body>
 
 </html>

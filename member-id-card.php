@@ -62,11 +62,11 @@ function mic_profile_fields()
 <table class="form-table user-member-id-card-wrap-table" role="presentation">
     <tbody>
         <tr class="user-member-id-card-wrap">
-            <th scope="row"><?php echo __('Carteirinha ', 'mic').$site_name ?> </th>
+            <th scope="row"><?php echo __('Member ID Card ', 'mic').$site_name ?> </th>
             <td>
                 <label for="mic-link">
                     <a href="<?php echo get_home_url() ?>?card-view=<?php echo $current_user->ID ?>" target="_blank">
-                        <?php _e('Ver/imprimir carteirinha', 'mic') ?>
+                        <?php _e('See/Print Member ID Card', 'mic') ?>
                     </a>
                 </label>
             </td>
