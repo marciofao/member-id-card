@@ -21,5 +21,10 @@ add_action( 'mic_card_page_html_after_front', 'custom_html_after_front_function'
 add_action( 'mic_card_page_html_before_back', 'custom_html_before_back_function' );<br>
 add_action( 'mic_card_page_html_after_back', 'custom_html_after_back_function' );<br>
 
+<p><b>Screenshots:</b></p>
+<img src="https://raw.githubusercontent.com/marciofao/member-id-card/master/img/profile.png" alt="Wordpress profile page"> <br>
+<img src="https://raw.githubusercontent.com/marciofao/member-id-card/master/img/generated-id-card.png" alt="Generated card">
+
+
 
 
