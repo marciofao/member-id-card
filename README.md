@@ -11,7 +11,7 @@ Generates a QR code for Card validating and air-gap visualization from phones.
 </li>
 </ul>
 
-Use the following hooks for custom contents in the card page:<br>
+Use the following hooks for custom contents in the card page:<br><br>
 <b>Styling</b> <br>
 add_action( 'mic_card_page_custom_css', 'custom_css_content_function' );<br><br>
 
