@@ -42,11 +42,19 @@ $usr = get_user_by('id', $_GET['card-view']);
        
     }
 
+   <?php 
+    do_action('mic_card_page_custom_css');
+  ?>
     
 </style>
 
-<div class="card">
-    <h2> <?php echo $usr->display_name ?> </h2>
+
+
+<div class="card card-front">
+<?php 
+    do_action('mic_card_page_html_before_front');
+?>
+    <h2><span class="display-name"><?php echo $usr->display_name ?> </span></h2>
 
 
     <img src="<?php echo get_site_url() ?>?card-generate=<?php echo $_GET['card-view'] ?>" alt="QR Code" class="qrcode">
@@ -54,5 +62,18 @@ $usr = get_user_by('id', $_GET['card-view']);
     <div class="tac ">
         <div class="activity w100"><?php _e("Usuário Ativo", "mic") ?></div>
     </div>
+
+<?php 
+  do_action('mic_card_page_html_after_front');
+?>
 </div>
-<div class="card"></div>
+<div class="card card-back">
+<?php 
+    do_action('mic_card_page_html_before_back');
+?>
+
+<?php 
+    do_action('mic_card_page_html_after_back');
+?>
+
+</div>

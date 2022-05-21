@@ -1,2 +1,25 @@
 # member-id-card
-Simple wordpress plugin for user's id card creation
+Simple wordpress plugin for user's id card creation and display <br>
+
+<b>Features:</b><br>
+<ul>
+<li>
+Adds a link to the user profile for viewing the user ID card.
+</li>
+<li>
+Generates a QR code for Card validating and air-gap visualization from phones.
+</li>
+</ul>
+
+Use the following hooks for custom contents in the card page:<br>
+<b>Styling</b> <br>
+add_action( 'mic_card_page_custom_css', 'custom_css_content_function' );<br><br>
+
+<b>Content</b> <br>
+add_action( 'mic_card_page_html_before_front', 'custom_html_before_front_function' ); <br>
+add_action( 'mic_card_page_html_after_front', 'custom_html_after_front_function' );<br>
+add_action( 'mic_card_page_html_before_back', 'custom_html_before_back_function' );<br>
+add_action( 'mic_card_page_html_after_back', 'custom_html_after_back_function' );<br>
+
+
+
