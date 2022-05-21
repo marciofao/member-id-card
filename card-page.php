@@ -7,7 +7,7 @@ $usr = get_user_by('id', $_GET['card-view']);
 
 <head>
     <title>
-        <?php _e('Member Card', 'mic') ?>
+        <?php _e('Member ID Card', 'mic') ?>
     </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script type="text/javascript" src="<?php echo MIC_PLUGIN_URI ?>/vendor/html5qrcode/qrcode.js">
@@ -95,8 +95,8 @@ $usr = get_user_by('id', $_GET['card-view']);
         updateQRCode('<?php echo get_home_url() . "/?card-view=" . $_GET['card-view'] ?>');
     </script>
 
-    <div class="tac ">
-        <div class="activity w100"><?php _e("Usuário Ativo", "mic") ?></div>
+    <div class="user-activity tac ">
+        <div class="activity w100"><?php _e("Active User", "mic") ?></div>
     </div>
 
     <?php
