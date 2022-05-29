@@ -14,6 +14,9 @@ Generates a QR code for Card validating and air-gap visualization from phones.
 <li>
 Loco translate compatible
 </li>
+<li>
+Print link on card page
+</li>
 </ul>
 
 Use the following hooks for custom contents in the card page:<br><br>

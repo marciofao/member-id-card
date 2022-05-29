@@ -16,73 +16,15 @@ $usr = get_user_by('id', base64_decode($_GET['card-view']));
     <script type="text/javascript" src="<?php echo MIC_PLUGIN_URI ?>/vendor/html5qrcode/html5-qrcode.js">
     </script>
     <style>
-        /* It envisions a A4 printing logic */
-        html {
-            font-size: 1vw;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        @media only screen and (max-width: 600px) {
-            html {
-                font-size: 2vw;
-            }
-            body{
-                margin: 0;
-            }
-        }
-
-        h1 {
-            font-size: 2em;
-        }
-
-        .card {
-            border: 1px solid black;
-            width: 50em;
-            height: 28.9em;
-            position: relative;
-            margin-bottom: 2em;
-            padding: 1em;
-            box-sizing: border-box;
-        }
-
-        .qrcode {
-            width: 8em;
-        }
-        .picture{
-            width: 30%;
-        }
-        .user-pic {
-            width: 100%;
-        }
-
-        .tac {
-            text-align: center;
-        }
-
-        .prel {
-            position: relative;
-        }
-
-        .w100 {
-            width: 100%;
-        }
-
-        .activity {
-
-            position: absolute;
-            bottom: 0;
-            text-transform: uppercase;
-            font-size: 3em;
-
-        }
-
-        <?php
-        do_action('mic_card_page_custom_css');
-        ?>
+        <?php require_once("style.css") ?>
+        <?php do_action('mic_card_page_custom_css') ?>
     </style>
 </head>
 
 <body>
+    <div class="print">
+        <a href="javascript:window.print()"><?php _e('Print page', 'mic') ?></a>
+    </div>
 
     <div class="card card-front">
         <?php
@@ -92,7 +34,7 @@ $usr = get_user_by('id', base64_decode($_GET['card-view']));
             <h2><span class="display-name"><?php echo $usr->display_name ?> </span></h2>
             <div class="picture">
                 <?php $profile_pic = get_usermeta($usr->ID, 'simple_local_avatar')['full'] ?>
-                <?php if(!$profile_pic) $profile_pic = MIC_PLUGIN_URI.'img/blank_profile.png' ?>
+                <?php if (!$profile_pic) $profile_pic = MIC_PLUGIN_URI . 'img/blank_profile.png' ?>
                 <img src="<?php echo $profile_pic ?>" alt="<?php _e('Profile Picture', 'mic') ?>" class="user-pic">
             </div>
         </div>

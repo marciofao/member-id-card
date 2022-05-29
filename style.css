@@ -1,1 +1,68 @@
-/* silence is golden */
+/* It envisions a A4 printing logic */
+html {
+    font-size: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 2vw;
+    }
+
+    body {
+        margin: 0;
+    }
+}
+
+@media print {
+    .print {
+        display: none;
+    }
+}
+
+h1 {
+    font-size: 2em;
+}
+
+.card {
+    border: 1px solid black;
+    width: 50em;
+    height: 28.9em;
+    position: relative;
+    margin-bottom: 2em;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.qrcode {
+    width: 8em;
+}
+
+.picture {
+    width: 30%;
+}
+
+.user-pic {
+    width: 100%;
+}
+
+.tac {
+    text-align: center;
+}
+
+.prel {
+    position: relative;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.activity {
+
+    position: absolute;
+    bottom: 0;
+    text-transform: uppercase;
+    font-size: 3em;
+
+}
