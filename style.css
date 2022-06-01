@@ -18,6 +18,10 @@ html {
     .print {
         display: none;
     }
+    .card-background{
+        -webkit-print-color-adjust: exact; 
+    }
+    
 }
 
 h1 {
