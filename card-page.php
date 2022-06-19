@@ -32,10 +32,10 @@ $usr = get_user_by('id', base64_decode($_GET['card-view']));
         ?>
         <div class="user-info">
             <h2><span class="display-name"><?php echo $usr->display_name ?> </span></h2>
-            <div class="picture">
-                <?php $profile_pic = get_user_meta($usr->ID, 'simple_local_avatar', true)['full'] ?>
+            <?php $profile_pic = get_user_meta($usr->ID, 'simple_local_avatar', true)['full'] ?>
                 <?php if (!$profile_pic) $profile_pic = MIC_PLUGIN_URI . 'img/blank_profile.png' ?>
-                <img src="<?php echo $profile_pic ?>" alt="<?php _e('Profile Picture', 'mic') ?>" class="user-pic">
+            <div class="picture" style="background: url('<?php echo $profile_pic ?>')">
+               
             </div>
         </div>
 
