@@ -82,8 +82,8 @@ function mic_profile_fields()
 
 }
 
-add_action('show_user_profile', 'mic_profile_fields',25);
-add_action('edit_user_profile', 'mic_profile_fields',25);
+add_action('show_user_profile', 'mic_profile_fields',11);
+add_action('edit_user_profile', 'mic_profile_fields',11);
 
 function mic_show_card(){
     if(isset($_GET['card-view'])){
