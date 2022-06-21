@@ -18,8 +18,9 @@ html {
     .print {
         display: none;
     }
-    .card-background{
+    .card-background, .picture{
         -webkit-print-color-adjust: exact;  
+        print-color-adjust: exact;
     }
     
 }
@@ -46,6 +47,7 @@ h1 {
     width: 30%;
     height: 14em;
     background-size: cover !important;
+    
 }
 
 .user-pic {
