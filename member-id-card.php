@@ -67,11 +67,21 @@ function mic_profile_fields()
                     $user_id = $current_user->ID;
                     if(isset($_GET["user_id"]))
                     $user_id = $_GET["user_id"];
-                    
+
+                    $noprint = false;
+                    //dump_die(get_user_meta($user_id, 'simple_local_avatar', true)['full']);
+                    if(!isset(get_user_meta($user_id, 'simple_local_avatar', true)['full'])){
+                        $noprint = true;
+                    }
+
                     ?>
+                    <?php if($noprint): ?>
+                        <?php _e('To show the member ID card, first upload a local avatar picture and save', 'mic') ?>
+                    <?php else: ?>
                     <a href="<?php echo get_home_url() ?>?card-view=<?php echo base64_encode($user_id) ?>" target="_blank">
                         <?php _e('See/Print Member ID Card', 'mic') ?>
                     </a>
+                    <?php endif ?>
                 </label>
             </td>
         </tr>
