@@ -1,5 +1,9 @@
 <?php
 $usr = get_user_by('id', base64_decode($_GET['card-view']));
+if(!isset(get_user_meta($usr->ID, 'simple_local_avatar', true)['full'])){
+    _e("User does not have local avatar picture", "mic"); die;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +38,7 @@ $usr = get_user_by('id', base64_decode($_GET['card-view']));
             <h2><span class="display-name"><?php echo $usr->display_name ?> </span></h2>
             <?php $profile_pic = get_user_meta($usr->ID, 'simple_local_avatar', true)['full'] ?>
                 <?php if (!$profile_pic) $profile_pic = MIC_PLUGIN_URI . 'img/blank_profile.png' ?>
-            <div class="picture" style="background: url('<?php echo $profile_pic ?>')" role="img" aria-label="<?php _e('User Picture', 'mic') ?>">
+            <div class="picture" style="background: url('<?php echo $profile_pic ?>')" role="img" aria-label="<?php _e('User Picture', 'mic') ?> ">
                
             </div>
         </div>
