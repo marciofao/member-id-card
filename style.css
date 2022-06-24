@@ -22,8 +22,12 @@ html {
         -webkit-print-color-adjust: exact;  
         print-color-adjust: exact;
     }
+    .card-back{
+        transform: rotate(180deg);
+    }
     
 }
+    
 
 h1 {
     font-size: 2em;
