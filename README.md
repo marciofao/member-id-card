@@ -17,6 +17,7 @@ Loco translate compatible
 <li>
 Print link on card page
 </li>
+asdklasnd
 </ul>
 
 Use the following hooks for custom contents in the card page:<br><br>
@@ -28,6 +29,8 @@ add_action( 'mic_card_page_html_before_front', 'custom_html_before_front_functio
 add_action( 'mic_card_page_html_after_front', 'custom_html_after_front_function' );<br>
 add_action( 'mic_card_page_html_before_back', 'custom_html_before_back_function' );<br>
 add_action( 'mic_card_page_html_after_back', 'custom_html_after_back_function' );<br>
+
+
 
 <p><b>Screenshots:</b></p>
 <img src="https://raw.githubusercontent.com/marciofao/member-id-card/master/img/profile.png" alt="Wordpress profile page"> <br>
