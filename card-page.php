@@ -4,11 +4,11 @@ if(!isset(get_user_meta($usr->ID, 'simple_local_avatar', true)['full'])){
     _e("User does not have local avatar picture", "mic"); die;
 }
 
+//nova edição
 ?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>
         <?php _e('Member ID Card', 'mic') ?>
