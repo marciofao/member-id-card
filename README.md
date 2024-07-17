@@ -17,6 +17,7 @@ Loco translate compatible
 <li>
 Print link on card page
 </li>
+asdklasnd
 </ul>
 
 Use the following hooks for custom contents in the card page:<br><br>
